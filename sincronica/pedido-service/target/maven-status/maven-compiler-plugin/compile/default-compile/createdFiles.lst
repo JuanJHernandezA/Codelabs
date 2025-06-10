@@ -1,0 +1,6 @@
+com\example\pedidoserviceasync\PedidoRequest.class
+com\example\pedidoserviceasync\ProductoClient.class
+com\example\pedidoserviceasync\PedidoController.class
+com\example\pedidoserviceasync\PedidoServiceApplication.class
+com\example\pedidoserviceasync\ProductoDTO.class
+com\example\pedidoserviceasync\Pedido.class
