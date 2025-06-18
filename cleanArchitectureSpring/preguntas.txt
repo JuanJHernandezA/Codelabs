@@ -1,0 +1,69 @@
+
+
+1. Propósito principal de Clean Architecture
+El objetivo de Clean Architecture es mantener la independencia de la lógica de negocio respecto a frameworks, bases de datos y detalles de implementación. Esto permite que el código sea más modular, testeable y fácil de mantener.
+
+2. Beneficios en microservicios con Spring Boot
+Desacoplamiento: Cada servicio tiene su propia lógica sin depender de detalles externos.
+
+Facilidad de pruebas: Separar capas permite probar la lógica de negocio sin necesidad de infraestructura.
+
+Escalabilidad: La modularidad facilita la expansión del sistema sin afectar otras partes.
+
+3. Principales capas y sus responsabilidades
+Clean Architecture se divide en varias capas:
+
+Entidad (Dominio): Contiene reglas de negocio puras.
+
+Casos de uso (Aplicación): Define la lógica de aplicación sin depender de infraestructura.
+
+Adaptadores (Interfaz): Conecta la lógica con controladores, bases de datos y APIs externas.
+
+Frameworks y Drivers: Implementaciones concretas como Spring Boot, bases de datos y herramientas externas.
+
+4. Desacoplamiento de lógica de negocio e infraestructura
+Separar la lógica de negocio de la infraestructura evita que cambios en bases de datos o frameworks afecten el núcleo del sistema. Esto mejora la portabilidad y mantenibilidad.
+
+5. Rol de la capa de aplicación
+La capa de aplicación contiene casos de uso, que representan acciones específicas del sistema. No maneja detalles de almacenamiento ni dependencias externas.
+
+6. Diferencia entre UseCase y Service
+UseCase: Representa una acción específica del negocio (ej. "Registrar usuario").
+
+Service: Puede contener lógica compartida entre varios casos de uso, pero no define reglas de negocio.
+
+7. Definir Repositories como interfaces en la capa de dominio
+Definir repositorios como interfaces permite cambiar la implementación sin afectar la lógica de negocio. Esto evita acoplamiento directo con JpaRepository y facilita pruebas.
+
+8. Implementación de un UseCase en Spring Boot
+Ejemplo de un caso de uso:
+
+java
+public class RegisterUserUseCase {
+    private final UserRepository userRepository;
+
+    public RegisterUserUseCase(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public void execute(User user) {
+        userRepository.save(user);
+    }
+}
+Ventajas:
+
+Independencia de infraestructura.
+
+Facilidad de pruebas unitarias.
+
+Modularidad y reutilización.
+
+9. Problemas sin Clean Architecture en microservicios
+Acoplamiento excesivo: Difícil de modificar sin afectar otras partes.
+
+Dificultad para probar: Dependencias directas con bases de datos y frameworks.
+
+Menor escalabilidad: Código monolítico dentro de cada microservicio.
+
+10. Escalabilidad y mantenibilidad en microservicios
+Clean Architecture facilita la escalabilidad al permitir modificar componentes sin afectar el sistema completo. También mejora la mantenibilidad al organizar el código en capas bien definidas.

@@ -13,12 +13,12 @@ spec:
         app: webapp-volumen
     spec:
       containers:
-        - name: nginx
-          image: nginx
-          volumeMounts:
-            - name: html-volume
-              mountPath: /usr/share/nginx/html
-      volumes:
+      - name: nginx
+        image: nginx
+        volumeMounts:
         - name: html-volume
-          configMap:
-            name: html-config
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: html-volume
+        configMap:
+          name: html-config

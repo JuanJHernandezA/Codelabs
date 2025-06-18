@@ -5,7 +5,7 @@ metadata:
 data:
   index.html: |
     <html>
-    <body>
-    <h1>¡Hola desde un volumen en Kubernetes!</h1>
-    </body>
+      <body>
+        <h1>¡Hola desde un volumen en Kubernetes!</h1>
+      </body>
     </html>

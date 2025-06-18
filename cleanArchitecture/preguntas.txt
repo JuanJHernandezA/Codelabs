@@ -1,0 +1,63 @@
+1. ¿Qué es Attribute-Driven Design (ADD) y cuál es su propósito?
+ADD es un método de diseño arquitectónico que se enfoca en atributos de calidad como escalabilidad, seguridad y rendimiento. Su propósito es asegurar que la arquitectura del software cumpla con los requisitos clave del sistema antes de entrar en la implementación.
+
+2. ¿Cómo se relaciona ADD con Clean Architecture?
+ADD define los atributos de calidad antes de estructurar la arquitectura, mientras que Clean Architecture proporciona una separación clara de capas para mantener modularidad y flexibilidad. ADD ayuda a determinar los requisitos esenciales, y Clean Architecture materializa esos principios en una estructura organizada y mantenible.
+
+3. Pasos principales del método ADD
+ADD se desarrolla en iteraciones, siguiendo estos pasos:
+
+Definir los atributos de calidad (ej. escalabilidad, rendimiento).
+
+Identificar módulos clave y relaciones entre ellos.
+
+Asignar responsabilidades a cada módulo basados en los atributos definidos.
+
+Refinar y validar la arquitectura mediante pruebas y ajustes.
+
+4. Identificación de atributos de calidad y su importancia
+Los atributos de calidad determinan el éxito de la arquitectura. Se identifican mediante análisis de necesidades del negocio y prioridades técnicas. Algunos atributos clave incluyen:
+
+Escalabilidad (capacidad de crecimiento).
+
+Seguridad (protección ante amenazas).
+
+Mantenibilidad (facilidad de actualización).
+
+5. ¿Por qué Clean Architecture complementa ADD?
+Porque Clean Architecture establece capas bien definidas que facilitan la alineación con los atributos de calidad. Por ejemplo, si ADD prioriza mantenibilidad, la estructura modular de Clean Architecture refuerza ese atributo.
+
+6. Criterios para definir capas en Clean Architecture dentro de ADD
+Al diseñar la arquitectura con Clean Architecture dentro de ADD, debes considerar:
+
+Independencia de frameworks (evitar dependencia a tecnologías específicas).
+
+Separación de lógica de negocio en dominios bien estructurados.
+
+Facilidad de pruebas y mantenibilidad con componentes desacoplados.
+
+7. ADD en decisiones arquitectónicas basadas en negocio
+ADD permite que las decisiones arquitectónicas estén alineadas con objetivos estratégicos. Por ejemplo, si el negocio requiere una alta disponibilidad, ADD guiará el diseño hacia soluciones escalables y tolerantes a fallos.
+
+8. Beneficios de combinar ADD y Clean Architecture en microservicios
+Alta modularidad: Cada servicio puede enfocarse en un atributo de calidad definido.
+
+Menor acoplamiento: Diseño independiente facilita mantenimiento y escalabilidad.
+
+Facilidad de integración: Arquitectura clara simplifica comunicación entre servicios.
+
+9. ¿Cómo asegurar que la arquitectura cumple con ADD?
+Revisión de calidad mediante pruebas de rendimiento y resiliencia.
+
+Validación con métricas técnicas (tiempo de respuesta, uso de memoria).
+
+Evaluaciones iterativas para refinar decisiones arquitectónicas.
+
+10. Herramientas y metodologías para validar ADD + Clean Architecture
+Algunas herramientas útiles incluyen:
+
+SonarQube (análisis de código estático).
+
+Arquillian / JUnit (pruebas de integración).
+
+Prometheus + Grafana (monitoreo de métricas en producción).

@@ -13,21 +13,21 @@ spec:
         app: webapp
     spec:
       containers:
-        - name: nginx
-          image: nginx
-          ports:
-            - containerPort: 80
-          env:
-            - name: SALUDO
-              valueFrom:
-                configMapKeyRef:
-                  name: webapp-config
-                  key: SALUDO
-            - name: PASSWORD
-              valueFrom:
-               secretKeyRef:
-                name: webapp-secret
-                key: PASSWORD
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+        env:
+        - name: SALUDO
+          valueFrom:
+            configMapKeyRef:
+              name: webapp-config
+              key: SALUDO
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: webapp-secret
+              key: PASSWORD
 ---
 apiVersion: v1
 kind: Service
